@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    config:
+      enabled: false
+      import-check:
+        enabled: false
+    consul:
+      enabled: false
+      discovery:
+        enabled: false
+    compatibility-verifier:
+      enabled: false
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+
+app:
+  base-url: /api/v1/users
+  security:
+    secret-rotate-interval-millis: 60000
+    token-validity:
+      access-validity: 15
+      refresh-validity: 60
+
+cache:
+  requirements:
+    - cacheName: user-cache
+      ttlMinutes: 10
+    - cacheName: public-key-pool
+      ttlMinutes: 75

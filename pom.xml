@@ -31,6 +31,7 @@
 		<spring-cloud.version>2024.0.1</spring-cloud.version>
 		<mapstruct.version>1.6.3</mapstruct.version>
 		<lombok.version>1.18.30</lombok.version>
+		<shared-token-validation-lib.version>1.0.0</shared-token-validation-lib.version>
 	</properties>
 	<dependencies>
 
@@ -65,9 +66,9 @@
 
 		<!-- Security Dependencies -->
 		<dependency>
-			<groupId>com.rajugowda</groupId>
+			<groupId>com.deepu4115</groupId>
 			<artifactId>shared-token-validation-lib</artifactId>
-			<version>1.0.0</version>
+			<version>${shared-token-validation-lib.version}</version>
 		</dependency>
 
 		<!-- Cache Dependencies -->
@@ -106,6 +107,12 @@
         </dependency>
 
     </dependencies>
+	<repositories>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/deepu4115/shared-token-validation-lib</url>
+		</repository>
+	</repositories>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
